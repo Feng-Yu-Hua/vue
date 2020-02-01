@@ -1,7 +1,14 @@
 new Vue({
     el:"#app",
     data:{
-        item:1
+        Home:'首頁',
+        Feature:'自我介紹',
+    }
+});
+new Vue({
+    el:"#app4",
+    data:{
+        item:4
     }
 });
 new Vue({
@@ -15,7 +22,7 @@ new Vue({
                 description:'你好阿'
             },
             {
-                id:'2',
+                id:'2', 
                 cover:'../vue/images/1005-5760x3840.jpg',
                 name:'自我介紹2',
                 description:'你好阿2'
@@ -28,4 +35,19 @@ new Vue({
             }
         ]
     }
+})
+Vue.component('card-item',{
+    template:`
+    <div>
+        <div class="mt-2">
+            <slot name="title"></slot>
+        </div>
+        <div class="mt-2">
+            <slot name="body"></slot>
+        </div>        
+    </div>
+    `
+})
+new Vue({
+    el:"#app3",
 })
