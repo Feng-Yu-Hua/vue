@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../vue/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="../vue/lib/css.css">
+    <link rel="stylesheet" href="../vue/lib/css1.css">
     <script src="../vue/lib/jquery-3.4.1.slim.min.js"></script>
     <script src="../vue/lib/popper.min.js"></script>
     <script src="../vue/lib/bootstrap.min.js"></script>
@@ -15,6 +17,9 @@
     <title>自我介紹2</title>
 </head>
 <style>
+body {
+    font-family: 'Vollkorn','Noto Sans TC', serif;
+}
 li {
     cursor: pointer;
 }
@@ -32,8 +37,32 @@ li:hover {
 .jumbotron {
     height:450px;
 }
+.a1{
+    margin-bottom: 15px;
+}
 </style>
 <body>
+<div class="container-fluid" id="app">   
+    <div class="row">
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-light bg-dark col-12">
+            <a class="navbar-brand" href="#"><i class="far fa-star"></i></a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a href="自我介紹.html" class="nav-link">
+                            {{Home}}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            {{Feature}}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
 <div class="container-fluid" id="app2">
     <div v-if="day=='Thursday'" class="row">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -61,46 +90,28 @@ li:hover {
             </a>
         </div>
     </div>
-    <div v-else class="row">
-        <div class="jumbotron jumbotron-fluid w-100">
-            <h1 class="display-4">Fluid jumbotron</h1>
-            <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-        </div>
-    </div>
 </div>
-<div class="container-fluid" id="app">
+<div class="container-fluid a1" id="app4">
     <div class="row">
         <div class="col-3 mt-3">
             <ul class="list-group">
-                <li class="list-group-item" @click='item=1'>家庭介紹</li>
+                <li class="list-group-item disabled" @click='item=1'>自我介紹</li>
                 <li class="list-group-item" @click='item=2'>高中經歷</li>
                 <li class="list-group-item" @click='item=3'>大學經歷</li>
                 <li class="list-group-item" @click='item=4'>職訓經歷</li>
             </ul>
         </div>
         <div class="col-9 mt-3">
-            <div v-show='item==1'>
-                <div class="card-header">
-                    家庭介紹
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">家庭介紹</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                </div>
-                <div class="card-footer text-muted">
-                    2 days ago
-                </div>
-            </div>
             <div v-show='item==2'>
                 <div class="card-header">
                     高中經歷
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">高中經歷</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <p class="card-text">高中時懵懵懂懂的選擇大甲高工製圖科，在入學之前還不是很清楚製圖可以做些甚麼，經常就是讀書，畫工業製圖，因為製圖科是屬於機械類別，所以考大學也是只能考上機械系，在高中時期順利考取電腦輔助立體製圖丙級、電腦輔助機械設計製圖丙級、電腦輔助機械設計製圖乙級。</p>
                 </div>
                 <div class="card-footer text-muted">
-                    2 days ago
+                    努力讀書，學習AutoCAD、solidworks、考取證照
                 </div>
             </div>
             <div v-show='item==3'>
@@ -109,10 +120,11 @@ li:hover {
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">大學經歷</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <p class="card-text">大學時因為就讀的系所為機械系控制組，因此學習的方向偏向於電控，學習了靜力、動力、材力、熱力、流力、電子學、電機機械、自動控制等......但是在上機構設計時想明白了自己對於機械是沒有那麼多興趣的，因此在大學期間更傾向於參加社團活動，只要有時間便會參加冬季和夏季的帶小學生營隊，在學習期間策畫教導小學生的課程，並參加了紅樓獎的美宣組，CT活動營，飢餓30等......。
+                    </p>
                 </div>
                 <div class="card-footer text-muted">
-                    2 days ago
+                    在社團中學習了如何策畫活動，並在大學中學習了台達的plc和labview
                 </div>
             </div>
             <div v-show='item==4'>
@@ -121,15 +133,15 @@ li:hover {
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">職訓經歷</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <p class="card-text">在大學畢業後，因為想嘗試不同的領域，便報名了職訓局的網頁設計及網路架設的課程，學習了許多網頁架設及前端及後端的知識，並發現自己對於前端設計很感興趣，甚至超過了以前的專業，並在職訓期間考取了網頁架設的證照，職訓局結訓後便毅然決然地開始找前端設計的工作，因為了解自己才剛踏入全新的領域，所以期許自己能努力學習補足自己缺少的知識及能力。</p>
                 </div>
                 <div class="card-footer text-muted">
-                    2 days ago
+                    學習html、css、bootstrap、linux、php、mysql、Vue.js、github、考取網路架設乙級證照
                 </div>
             </div>
         </div>          
     </div>
-</div>   
+</div>
 <script src="../vue/js/自我介紹2.js"></script>    
 </body>
 </html>
