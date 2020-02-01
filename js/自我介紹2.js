@@ -48,6 +48,3 @@ Vue.component('card-item',{
     </div>
     `
 })
-new Vue({
-    el:"#app3",
-})
